@@ -1,0 +1,645 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+}
+:root {
+  --white-color: #fff;
+  --main-color: #585ce9;
+  --gray: rgb(233, 233, 233);
+  --text-color: #3b566e;
+  --text-opc-color:#697BA2;
+  --white-hover: #f5f5f5;
+  --h2-size: 28px;
+  --border-radius-md: 10px;
+  --trs-main: 0.5s;
+  --opacity-main: 0.7;
+  --fs-18: 18px;
+  --fs-14: 14px;
+  --fs-16: 16px;
+  --fs-28: 28px;
+}
+::selection{
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+.d-flex {
+  display: flex;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.m-left {
+  margin-left: 15px;
+}
+.mr-0{
+  margin-right: 0px!important;
+}
+
+/* Header CSS START */
+
+.header {
+  z-index: 999;
+  background-color: var(--white-color);
+  position: fixed;
+  width: 100%;
+  padding: 20px 0px;
+}
+.icon {
+  width: 10%;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  padding: 0px 40px;
+}
+.header-ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.header-ul a {
+  color: var(--text-color);
+}
+.header-ul a:hover {
+  color: var(--main-color);
+}
+.sign-content {
+  width: 40%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.sign-content .btn {
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: var(--trs-main);
+}
+.sign-up {
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+  color: var(--white-color);
+}
+.sign-in {
+  background-color: var(--white-color);
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+}
+.sign-in:hover {
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+  color: var(--white-color);
+  box-shadow: 2px 2px 2px var(--main-color);
+}
+.sign-up:hover {
+  background-color: var(--white-color);
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  box-shadow: 2px 2px 2px var(--main-color);
+}
+.fa-chevron-down {
+  font-size: 10px;
+}
+
+/* Inner Menu CSS START */
+
+.header-ul > li {
+  position: relative;
+}
+.header-ul li:hover .inner-menu {
+  visibility: visible;
+  opacity: 1;
+  top: 20px;
+}
+.inner-menu {
+  width: 150px;
+  background-color: var(--white-color);
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  padding: 15px 5px;
+  transition: var(--trs-main);
+  top: -20px;
+}
+.inner-menu li {
+  transition: var(--trs-main);
+  padding: 8px;
+}
+.inner-menu li:hover {
+  background-color: var(--white-hover);
+  border-left: 4px solid var(--main-color);
+}
+
+/* Inner Menu CSS END  */
+
+/* Header CSS END */
+
+/* Welcome Section CSS START  */
+
+#welcome {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.welcome-text {
+  padding-right: 80px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.welcome-text h1{
+  font-size: var(--fs-28);
+  color: var(--text-color);
+  font-weight: 300;
+}
+.welcome-text p {
+  font-size: var(--fs-18);
+  color: var(--text-opc-color);
+  margin-top: 20px;
+}
+.str-sl{
+  color: var(--main-color);
+  font-weight: 300;
+}
+.welcome-text button {
+  border: 1px solid var(--white-color);
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: var(--main-color);
+  color: var(--white-color);
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 40px;
+  font-weight: 300;
+  transition: var(--trs-main);
+}
+.welcome-text button:hover {
+  background-color: var(--white-color);
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  box-shadow: 2px 2px 2px var(--main-color);
+}
+.welcome-image {
+  width: 50%;
+  padding: 50px 0px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 7px;
+  grid-row-gap: 7px;
+}
+.item:hover img{
+  transform: scale(1.1);
+}
+.welcome-image :nth-child(1) {
+  grid-area: 1 / 1 / 4 / 2;
+}
+.welcome-image :nth-child(2) {
+  grid-area: 4 / 1 / 6 / 2;
+}
+.welcome-image :nth-child(3) {
+  grid-area: 1 / 2 / 3 / 3;
+}
+.welcome-image :nth-child(4) {
+  grid-area: 3 / 2 / 6 / 3;
+}
+
+.welcome-image .item {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  position: relative;
+}
+.item img{
+  border-radius: var(--border-radius-md);
+  height: 100%;
+  transition: var(--trs-main);
+  position: relative;
+}
+.item:last-child::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--main-color);
+  opacity: var(--opacity-main);
+  width: 100%;
+  height: 100%;
+}
+/* Image Over Text START*/
+
+.img-over{
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50px);
+  z-index: 2;
+  color: var(--white-color);
+}
+.img-over-text-title{
+  padding-bottom: 10px;
+  z-index: 2;
+  font-size: var(--fs-14);
+}
+.img-over-text{
+  font-size: var(--fs-18);
+  text-align: center;
+}
+
+
+/* Image Over Text END*/
+
+/* Welcome Section CSS END  */
+
+/* Services Section CSS START   */
+
+#services{
+  padding: 70px 0px;
+}
+#services .row{
+  display: flex;
+}
+#services .row .col{
+  width: 25%;
+  background-color: var(--white-color);
+  box-shadow: 0 2px 48px 0 rgb(0 0 0 / 8%);
+  text-align: center;
+  margin: 0px 25px 0px 0px;
+  padding: 30px;
+  cursor: pointer;
+  transition: var(--trs-main);
+  border-radius: var(--border-radius-md);
+}
+
+#services .row .col:hover{
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+#services .row .col .icon{
+  background-color: var(--white-hover);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  margin: auto;
+}
+#services .row .col h3{
+  margin: 20px 0px 20px 0px;
+  font-weight: 300;
+  font-size: var(--fs-18);
+}
+#services .row .col p{
+  font-size: var(--fs-16);
+  color: var();
+  font-weight: lighter;
+}
+#services .row .col .icon i{
+  color: #585ce9;
+}
+
+/* Services Section CSS END  */
+
+/* Cloud Services Section CSS START  */
+
+#cloud-services{
+  padding: 70px 0px;
+  background-color: var(--white-hover);
+}
+#cloud-services h2{
+  font-size: var(--h2-size);
+  color: var(--text-color);
+}
+#cloud-services p{
+  color: var(--text-opc-color);
+  font-size: var(--fs-18);
+  padding: 20px 0px;
+}
+.cloud-services-text{
+  width: 50%;
+}
+.cloud-services-image{
+  width: 50%;
+}
+.cloud-services-items{
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.cloud-services-items .col{
+  padding-top:20px ;
+  width: 50%;
+  padding: 15px 10px;
+}
+.cloud-services-items .services-item{
+  position: relative;
+}
+.services-item{
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 2px 48px 0 rgb(0 0 0 / 12%);
+  background-color: var(--white-color);
+  padding: 10px;
+}
+.services-item:hover::after{
+  left: -65px;
+  opacity: 1;
+  background-color: var(--main-color);
+}
+.services-item:hover .icon i{
+  color: var(--white-color);
+}
+.services-item h5{
+}
+.services-item:hover h5{
+  margin-left: 40px;
+}
+.services-item:hover p{
+  color: var(--white-color);
+}
+.services-item::after{
+  transition: var(--trs-main);
+  content: "";
+  position: absolute;
+  left: -80px;
+  top: 0;
+  z-index: 1;
+  width: 150px;
+  height: 100px;
+  transform: rotate(60deg);
+  opacity: 0;
+}
+.active::after{
+  left: -65px;
+  opacity: 1;
+  background-color: var(--main-color);
+}
+.active .icon i{
+  color: var(--white-color)!important;
+}
+.active h5{
+  margin-left: 40px!important;
+}
+.services-item .icon{
+  margin-left: 10px;
+  z-index: 3;
+}
+.services-item .icon i{
+  font-size: 12px;
+  color: #555;
+}
+.services-item h5{
+  transition: var(--trs-main);
+  color: #555;
+  font-weight: lighter;
+  font-size: var(--fs-16);
+  margin-left: 30px;
+}
+.cloud-services-image{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.design-development{
+  background-color: var(--white-color)!important;
+}
+.design-development .cloud-services-image{
+  justify-content: start!important;
+}
+
+/* Cloud Services Section CSS END  */
+/* Statistics Section CSS START  */
+
+#statistics{
+  padding: 50px 0px;
+  background: url(http://demo.tempload.com/jirono/assets/images/photos/parallax.jpg);
+  background-attachment: fixed;
+  z-index: 1;
+  position: relative;
+}
+#statistics::after{
+   content: '';
+   background-color: var(--main-color);
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+#statistics .row{
+  z-index: 2;
+}
+#statistics .col{
+  width: 25%;
+  position: relative;
+  transition: var(--trs-main);
+  bottom: 0;
+
+}
+#statistics .col:hover{
+  bottom: 20px;
+}
+.statistics-item{
+  padding: 0px 10px;
+}
+.statistics-item{
+  padding: 50px;
+  text-align: center;
+  color: var(--white-color);
+}
+.statistics-item span{
+  display: inline-block;
+  padding-bottom: 10px;
+  font-size: 48px;
+}
+.statistics-item p{
+  border-top: 2px dotted var(--white-color);
+  padding-top: 10px;
+  font-size: 24px;
+}
+.our-team{
+  padding: 80px 0px;
+}
+.our-team .row{
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0px;
+}
+.center-title{
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+.center-title h2{
+  font-size: var(--h2-size);
+}
+.center-title p{
+  padding: 20px 0px;
+  font-size: 18px;
+  color: var(--text-color);
+}
+.team-card{
+  margin: 0px 20px;
+  width: 25%;
+}
+.team-card-item{
+  box-shadow: 0 2px 48px 0 rgb(0 0 0 / 12%);
+  background-color: var(--white-color);
+  border-radius: 10px;
+}
+.team-title{
+  position: relative;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  z-index: 1;
+}
+.team-card-item:hover .team-title::after{
+  height: 170%;
+}
+.team-title h3,h4{
+  color: var(--white-color);
+  font-weight: 100;
+  z-index: 2;
+}
+
+.team-title::after{
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: var(--trs-main);
+  border-radius: 10px 10px 0px 0px;
+}
+.team-card-item:hover+.team-image{
+  top: -30px;
+}
+.team-card-item:hover .team-sm-ul a{
+  color: var(--white-color);
+}
+.team-sm{
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+.team-sm-ul{
+  z-index: 3;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+.team-sm-ul li a{
+  transition: var(--trs-main);
+  color: var(--main-color)
+}
+.team-about p{
+  color: var(--text-color);
+  padding: 25px 20px 75px 20px;
+  text-align: center;
+}
+.team-image{
+  top: -45px;
+  position: relative;
+  text-align: center;
+  transition: var(--trs-main);
+}
+.team-image img{
+  border-radius: 50%;
+}
+
+/* Statistics Section CSS END  */
+
+
+/* Footer Section CSS START */
+
+footer{
+  padding-top: 70px;
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+.main-footer{
+  padding-bottom: 30px;
+  display: flex;
+}
+.main-footer .about .icon{
+  padding: 0px 0px 30px 0px;
+}
+.main-footer .about p{
+  color: var(--white-color);
+  font-weight: 300;
+  font-size: 16px;
+}
+.main-footer .about{
+  width: 40%;
+}
+.main-footer .row{
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+}
+.footer-h3{
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.footer-menu-nav ul li{
+  padding: 7px 0px;
+}
+.footer-menu-nav ul li a{
+  color: var(--white-color);
+  font-size: 14px;
+  font-weight: 300;
+  transition: var(--trs-main);
+}
+.footer-menu-nav ul li a:hover{
+  margin-left: 10px;
+}
+
+.footer-menu-nav ul li i{
+  font-size: 10px;
+  margin-right: 5px;
+}
+.main-footer address{
+  width: 30%;
+  padding-left: 50px;
+}
+.adress-ul li{
+  padding: 7px 0px;
+  font-size: 16px;
+  font-weight: 300;
+}
+.adress-ul :last-child a{
+  margin: 0px;
+  color: var(--white-color);
+}
+.copyright{
+  border-top: 1px solid var(--white-hover);
+  padding: 40px 0px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/* Footer Section CSS END */
